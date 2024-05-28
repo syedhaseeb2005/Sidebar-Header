@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* height: 200vh; */
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  transition: margin-left 0.3s;
+  margin-left: 250px; /* Move header right when sidebar is visible */
+}
+
+.menu-toggle {
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #f4f4f4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s, left 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+/* Class for reducing the sidebar width */
+.sidebar-hidden .sidebar {
+  width: 100px;
+}
+
+/* Adjust the header and main content for reduced sidebar width */
+.sidebar-hidden .header,
+.sidebar-hidden .main-content {
+  margin-left: 100px;
+}
+
+/* Class for hiding the sidebar on small screens */
+.sidebar-hidden-small .sidebar {
+  left: -250px;
+}
+
+/* Class for showing the sidebar overlay on small screens */
+.sidebar-visible-small .sidebar {
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-left: 0;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .sidebar {
+    width: 250px; /* Ensure full width when sidebar is visible on small screens */
+  }
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.top-content {
+  /* Styles for the top content */
+}
+
+.bottom-content {
+  /* Styles for the bottom content */
+}
